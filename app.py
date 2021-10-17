@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 app = Flask(__name__)
-client_model = pickle.load(open('../Deployment/models/rf_model.pkl','rb'))
+client_model = pickle.load(open('../models/rf_model.pkl','rb'))
 
 @app.route('/', methods=['GET'])
 def home():
