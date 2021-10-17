@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Sales Predictor</title>
+  <h1>Welcome to Store sales prediction</h1>
+</head>
+
+<body background="../static/sale1.jpg" >
+ <div class="login">
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+        <label><b>Enter the Year of Establishment:</b></label>
+    	<input id="first" name="Outlet_Establishment_Year" required="required" />
+        <br>
+        <br>
+        <label><b>Enter the Weight:</b></label>
+    	<input id="second" name="Item_Weight" required="required" />
+        <br>
+        <br>
+        <label><b>Percentage Display area of the item in the store</b></label>
+    	<input id="third" name="Item_Visibility" required="required" />
+        <br><br>
+        <label><b>Enter the price(MRP) of the Item</b></label>
+    	<input id="fourth" name="Item_MRP" required="required" />
+        <br>
+        <br>
+        <label><b>Enter the Size of the Outlet</b></label>
+    	<select name="Outlet_Size" id="size" required="required" />
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Small">Small</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Enter the Outlet Location Type</b></label>
+        <select name="Outlet_Location_Type" id="outletlocationtype" required="required" />
+        <option value="Tier1">Tier1</option>
+        <option value="Tier2">Tier2</option>
+        <option value="Tier3">Tier3</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Enter the Outlet Type</b></label>
+        <select name="Outlet_Type_Supermarket_Type1" id="outletlocationtype" required="required" />
+        <option value="Supermarket Type1">Supermarket Type1</option>
+        <option value="Supermarket Type2">Supermarket Type2</option>
+        <option value="Supermarket Type3">Supermarket Type3</option>
+        <option value="Grocery Store">Grocery Store</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Enter Item Fat Content</b></label>
+        <select name="Item_Fat_Content_Regular" id="fatcontent" required="required"/>
+        <option value="Non_Edible">Non_Edible</option>
+        <option value="Regular">Regular</option>
+        <option value="Low Fat">Low Fat</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Enter Item Type</b></label>
+        <select name="Item_Type_New_Perishable" id="itemtype" required="required"/>
+        <option value="Perishable">Perishable</option>
+        <option value="Non Perishable">Non Perishable</option>
+        <option value="Not Sure">Not Sure</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Enter Item Category</b></label>
+        <select name="Item_Category_Food" id="itemcat" required="required"/>
+        <option value="Food">Food</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Non Consumable">Non Consumable</option>
+        </select>
+        <br>
+        <br>
+        <button id="sub" type="submit">Predict</button>
+    </form>
+    <h2>{{ prediction_text }}<h2>
+    <h2>{{ prediction_texts }}<h2>
+   <br>
+   <br>
+ </div>
+
+<style>
+        body {
+            background-repeat: no-repeat;
+            background-size:cover;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        </style>
+        </body>
+</html>
